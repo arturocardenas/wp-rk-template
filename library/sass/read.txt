@@ -1,0 +1,3 @@
+partial: Ficheros de reset y mixins genericos.
+modules: Ficheros que correspondan a cada modulo de la web.
+vendor: Estilos de plugins instalados en nuestra aplicacion.

@@ -1,12 +1,21 @@
 <?php
-/**
-	* Crear nuestros menus gestionables desde el administrador de wordpress.
-	*/
+/*
+	Bootstrap
+*/
+function bootstrap_scripts() {
+	wp_enqueue_style('rk-theme-bootstrap', get_template_directory_uri().'/library/bootstrap/css/bootstrap.min.css');
+	wp_enqueue_script('rk-theme-bootstrapjs', get_template_directory_uri().'/library/bootstrap/js/bootstrap.min.js', array('jquery'));
+}
+add_action('wp_enqueue_scripts', 'bootstrap_scripts');
+
+/*
+	menus
+*/
 function my_menus() {
 	register_nav_menus(
 		array(
 			'navegation' =>
-			__( 'Menu de navegacion' ),
+			__( 'Menu de navegacion' )
 			)
 		);
 }

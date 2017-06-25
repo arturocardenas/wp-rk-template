@@ -10,8 +10,11 @@
 <header>
 <h1><?php bloginfo('name'); ?></h1>
 </header>
-<nav>
-<ul class="main-nav">
-<?php wp_nav_menu(array('theme_location' => 'navigation')); ?>
-</ul>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+			<!--<ul class="main-nav">-->
+			<ul class="nav navbar-nav">
+			<?php wp_nav_menu(array('theme_location' => 'navigation')); ?>
+			</ul>
+	</div>
 </nav>

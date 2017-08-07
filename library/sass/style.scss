@@ -1,8 +1,20 @@
 @import 'partial/reset';
 @import 'modules/contact';
+@import '../bower_components/bootstrap-sass/assets/stylesheets/bootstrap';
 
-$background: #CCCCCC;
-
-body {
-background: $background;
+.contenido {
+	aside {
+		ul{
+			@extend .list-group;
+			li{
+				@extend .list-group-item;
+				display: block;
+				text-align: center;
+				a{
+					text-decoration: none;
+					display: inherit;
+				}
+			}
+		}
+	}
 }

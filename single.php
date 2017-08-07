@@ -16,6 +16,6 @@
 <p><?php -e('Ups!, esta entrada no existe.'); ?></p>
 <?php endif; ?>
 <!-- Archivo de barra lateral por defecto -->
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 <!-- Archivo de pie global de Wordpress -->
 <?php get_footer(); ?>

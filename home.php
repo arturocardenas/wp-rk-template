@@ -1,8 +1,9 @@
 <!-- Archivo de cabecera global de wordpress -->
 <?php get_header(); ?>
+<div class="container contenido">
 <!-- Listado de posts -->
 <?php if(have_posts()): ?>
-<section>
+<section class="col col-sm-8">
 <?php while(have_posts()):the_post(); ?>
 <article>
 <header>
@@ -25,7 +26,10 @@
 <?php else: ?>
 <p><?php _e('Ups!, no hay entradas.'); ?></p>
 <?php endif; ?>
+<section class="col col-sm-4">
 <!-- Archivo de barra lateral por defecto -->
 <?php get_sidebar(); ?>
+</section>
+</div>
 <!-- Archivo de pie global de Wordpress -->
 <?php get_footer(); ?>

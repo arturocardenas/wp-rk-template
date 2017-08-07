@@ -1,0 +1,27 @@
+{
+  "name": "rk-template",
+  "version": "1.0.0",
+  "description": "paquetes para template de wordpress rk-theme",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arturocardenas/wp-rk-template.git"
+  },
+  "author": "Arturo Cardenas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arturocardenas/wp-rk-template/issues"
+  },
+  "homepage": "https://github.com/arturocardenas/wp-rk-template#readme"
+}

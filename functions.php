@@ -8,8 +8,17 @@ function bootstrap_scripts() {
 }
 add_action('wp_enqueue_scripts', 'bootstrap_scripts');
 
+//Register custom navigation walker
+require_once('wp-bootstrap-navwalker.php');
+// Theme setup  navigation walker
+add_action( 'after_setup_theme', 'wpt_setup' );
+    if ( ! function_exists( 'wpt_setup' ) ):
+        function wpt_setup() {  
+            register_nav_menu( 'primary', __( 'Primary navigation', 'wptuts' ) );
+        } endif;
+		
 /*
-	menus
+	navbar menus
 */
 function my_menus() {
 	register_nav_menus(
@@ -19,27 +28,40 @@ function my_menus() {
 			)
 		);
 }
-
-add_action(
-'init',
-'my_menus' );
+add_action('init','my_menus');
 
 /*
-	Zonas de Widgets
+	widgets
 */
+// Barra lateral principal
 function my_widgets(){
 	register_sidebar(
 		array(
 			'name' => __('Sidebar'),
 			'id' => 'sidebar',
-			'before_widget' => '<div class="widget">',
-			'after_widget' => '</div>',
-			'before_title' => '<h3>',
-			'after_title' => '</h3>'
+			'before_widget' => '<aside class="widget">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h2>',
+			'after_title' => '</h2>'
 			)
 			);
 }
 add_action('init','my_widgets');
+
+// Barra lateral secundaria
+function registrar_sidebar(){  
+  register_sidebar(array(  
+   'name' => 'Sidebar de ejemplo',  
+   'id' => 'sidebar-ejemplo',  
+   'description' => 'Descripción de ejemplo',  
+   'class' => 'sidebar',  
+   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+   'after_widget' => '</aside>',  
+   'before_title' => '</br></br></br></br></br><!-- <h2 class="widget-title">',  
+   'after_title' => '</h2> -->',  
+  ));  
+}  
+add_action( 'widgets_init', 'registrar_sidebar');
 
 /*
     Filtrar resultados de busqueda solo posts
